@@ -1,0 +1,29 @@
+.calculator {
+    display: grid;
+    place-self: center;
+    place-items: center;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(5, 50px);
+    background-color: grey;
+    position: relative;
+}
+
+.clear {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 10px;
+    left: 10px;
+}
+
+.calculator__input {
+    grid-column: 1/-1;
+    width: 92%;
+    height: 80%;
+    text-align: right;
+}
+
+button {
+    width: 80%;
+    height: 80%;
+}

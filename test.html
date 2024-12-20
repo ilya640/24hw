@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .title {
+            text-align: center;
+        }
+        
+        .title_type_main {
+            color: red;
+            background-color: yellow;
+            font-size: 2.75rem;
+        }
+        
+        .theme-dark {
+            background-color: rgba(0, 0, 0, .75);
+            color: white;
+        }
+        
+        .accent {
+            color: blue;
+            font-weight: bold;
+        }
+        
+        .for-change {
+            border: 2px solid blue;
+            padding: 5px;
+        }
+        
+        .for-change img {
+            display: block;
+            max-width: 240px;
+        }
+        
+        .alert {
+            padding: 15px;
+            border: 1px solid #d6e9c6;
+            border-radius: 4px;
+            color: #3c763d;
+            background-color: #dff0d8;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .alert p {
+            margin: 0;
+        }
+        
+        .alert button {
+            border: 1px red solid;
+            border-radius: 4px;
+            background-color: #fff;
+            color: red;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .alert button:hover {
+            background-color: red;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .alert button:active {
+            position: relative;
+            top: 1px;
+        }
+        
+        .input-container {
+            padding: 10px;
+            border: 2px red solid;
+        }
+        
+        .input-counter {
+            max-width: 56px;
+            text-align: center;
+        }
+        
+        .shadow {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 101;
+            background-color: rgba(0, 0, 0, .75);
+        }
+        
+        .modal {
+            display: none;
+            background-color: #fff;
+            width: 300px;
+            border: 2px red solid;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 102;
+            transform: translate(-50%, -50%);
+        }
+        
+        .modal header {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px red solid;
+            position: relative;
+        }
+        
+        .modal h2 {
+            margin: 0;
+        }
+        
+        .modal .close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            display: block;
+            text-decoration: none;
+            padding: 3px 5px;
+        }
+        
+        .modal section {
+            padding: 20px 10px;
+            font-size: 18px;
+        }
+        
+        .modal footer {
+            padding: 10px;
+            text-align: center;
+            border-top: 1px red solid;
+        }
+        
+        .opened {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- comment with more words -->
+    <h1 id="title" class="title test dsadxasd dasdasdas">Hi, dear <span>Users</span>!</h1>
+
+    <p><button type="button" onclick="changeTitle()">change h1 styles</button></p>
+    <p><button type="button" onclick="changeTheme()">change site theme</button></p>
+
+    <p>Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Ratione architecto laudantium illo esse alias, enim consectetur, vel officiis harum rem, magnam possimus tempora ab eius ducimus? Aspernatur nostrum eveniet provident!</p>
+
+    <h2>Subtitle</h2>
+    <p><button type="button" onclick="addSomeMagic()">Add some magic!</button></p>
+    <p class="for-change">
+        <strog>Test</strog> <em>test</em></p>
+
+    <p class="test">Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Vero ullam minus voluptate exercitationem velit atque neque modi saepe totam provident asperiores et, accusamus. Dicta pariatur sequi consectetur, officia at consequatur officiis illum possimus
+        minima provident ut dolorem ratione ullam quos totam quaerat in consequuntur obcaecati praesentium doloremque vel sunt perferendis?</p>
+
+    <p><button type="button" onclick="changeList()">change list items</button></p>
+
+    <ul id="list" class="test">
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+        <li>list item 6</li>
+        <li>list item 7</li>
+    </ul>
+
+    <p class="test">Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Dolore, ratione.</p>
+
+    <p><button type="button" class="create-alert" onclick="createAlert()">Add alert message</button></p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, suscipit!</p>
+
+    <div class="input-container">
+        <button type="button" onclick="decrease();">&minus;</button>
+        <input type="text" value="1" id="counter" class="input-counter" readonly>
+        <button type="button" onclick="increase();">&plus;</button>
+    </div>
+
+    <p><button type="button" onclick="openModalWindow()">Open modal window!!!</button></p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex optio, dicta, sequi quam illum excepturi dolor nesciunt consectetur tempora totam odit voluptatum sit eos provident ea, nam obcaecati, beatae aut natus eaque sed itaque dolore numquam! Veniam
+        delectus facere, accusamus cumque sit hic fugit dolore ut molestiae ullam ipsum atque magnam explicabo alias repudiandae ipsam ducimus blanditiis maiores officiis. Enim laborum, quibusdam dolor sapiente veritatis a iste illo maiores deserunt fugiat
+        debitis quam. Sunt atque, nemo maxime reiciendis magnam consectetur dolores labore? Eius molestiae asperiores, quasi ut. Voluptate, nulla quasi, culpa soluta suscipit temporibus ipsa ipsam dolor, expedita aut itaque!</p>
+
+    <div class="shadow" id="shadow"></div>
+    <div class="modal" id="modal">
+        <header>
+            <button type="button" onclick="closeModalWindow();" class="close">❌</button>
+            <h2>Я модалка</h2>
+        </header>
+        <section>
+            <p>Я текст модалки</p>
+        </section>
+        <footer>
+            а я подвал
+        </footer>
+    </div>
+
+    <script>
+        /*console.dir(document.body.childNodes);
+                                            console.dir(document.body.children);
+
+                                            const titleEle = document.getElementById("title");
+                                            console.log(titleEle);
+                                            console.dir(titleEle);
+
+                                            console.log("id:", titleEle.id);
+                                            console.log("class:", titleEle.className);
+                                            console.log("tag:", titleEle.tagName);
+                                            console.log("text:", titleEle.textContent);
+                                            console.log("html:", titleEle.innerHTML);
+
+                                            titleEle.innerHTML = "Hello, <em>World</em>!";
+
+                                            const pLead = document.querySelector("#title + p");
+                                            console.log(pLead);
+
+                                            const testParagraphs = document.querySelectorAll("p.test");
+                                            console.log(testParagraphs);
+
+                                            const getTestElems = document.getElementsByClassName("test");
+                                            console.log(getTestElems);
+                                            const queryTestElems = document.querySelectorAll(".test");
+                                            console.log(queryTestElems);*/
+
+        const titleEle = document.getElementById("title");
+        console.log("html:", titleEle.innerHTML);
+        titleEle.innerHTML = "Hello, <em>World</em>!";
+
+        // titleEle.style.color = "red";
+        // titleEle.style.textAlign  = "center";
+        // titleEle.style.backgroundColor = "yellow";
+
+        function changeTitle() {
+            const classMod = " title_type_main";
+            let classes = titleEle.className;
+            console.log("class:", classes);
+
+            if (classes.indexOf(classMod) === -1) {
+                titleEle.className += classMod;
+            } else {
+                titleEle.className = classes.replace(classMod, "");
+            }
+        }
+
+        function changeTheme() {
+            document.body.classList.toggle("theme-dark");
+        }
+
+        function changeList() {
+            const myList = document.getElementById("list");
+
+            const pBefore = document.createElement("p");
+            pBefore.classList.add("change-list");
+            pBefore.textContent = "Я перед списком";
+            myList.before(pBefore); // вставить элемент перед списком
+
+            const pAfter = document.createElement("p");
+            pAfter.classList.add("change-list");
+            pAfter.textContent = "Я после списка";
+            myList.after(pAfter); // вставить элемент после списка
+
+            const liFirst = document.createElement("li");
+            liFirst.innerHTML = "<strong>Первый</strong> элемент";
+            myList.prepend(liFirst); // вставить liFirst в начало списка
+
+            const liLast = document.createElement("li");
+            liLast.innerHTML = "<strong>Последний</strong> элемент";
+            myList.append(liLast); // вставить liLast в конец списка
+
+            const li = myList.querySelectorAll("li:nth-child(even)");
+            for (let i = 0; i < li.length; i++) {
+                li[i].classList.toggle("accent");
+            }
+        }
+
+        function addSomeMagic() {
+            const p = document.querySelector(".for-change");
+            console.log(p.innerHTML);
+            p.innerHTML = "<img src=\"https://www.belnovosti.by/sites/default/files/blogs/2018/06/21/5.jpg\" alt=\"just smile!\">"
+        }
+
+        const createAlertBtn = document.querySelector(".create-alert");
+        let counter = 1;
+
+        function createAlert() {
+            const div = document.createElement("div");
+            div.classList.add("alert");
+            div.classList.add("alert-" + counter++);
+            div.innerHTML = "<p><strong>Всем привет!</strong> Вы прочитали важное сообщение.</p><p><button onclick=\"removeAlert(this);\">x</button></p>";
+
+            const alerts = document.querySelectorAll(".alert");
+
+            if (alerts.length < 5) {
+                document.body.prepend(div);
+            } else {
+                createAlertBtn.disabled = "disabled";
+            }
+        }
+
+        function removeAlert(btn) {
+            // console.log(btn);
+            // console.log(btn.parentElement);
+            // console.log(btn.parentElement.parentElement);
+            // console.log(btn.closest(".alert"));
+
+            btn.closest(".alert").remove();
+            const alerts = document.querySelectorAll(".alert");
+            if (alerts.length < 5) {
+                createAlertBtn.removeAttribute("disabled");
+            }
+        }
+
+        const inputCounter = document.querySelector("#counter");
+
+        function increase() {
+            // let value = Number(inputCounter.value);
+            // inputCounter.value = value + 1;
+            inputCounter.value++;
+        }
+
+        function decrease() {
+            if (inputCounter.value > 0) {
+                inputCounter.value--;
+            }
+        }
+
+        function openModalWindow() {
+            const shadow = document.querySelector("#shadow");
+            const modal = document.querySelector("#modal");
+            shadow.classList.add("opened");
+            modal.classList.add("opened");
+        }
+
+        function closeModalWindow() {
+            const shadow = document.querySelector("#shadow");
+            const modal = document.querySelector("#modal");
+            shadow.classList.remove("opened");
+            modal.classList.remove("opened");
+        }
+    </script>
+</body>
+
+</html>
